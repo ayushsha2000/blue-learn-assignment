@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  background-color: #F5F5F5;
+}
+
+main {
+  padding: 1rem;
+}
+
+h1, h2 {
+  color: #35495E;
+}
+
+h3 {
+  padding-bottom: 2rem;
+  color: #35495E;
+  font-size: 1.8rem;
+}
+
+button {
+  padding: 16px 8px;
+  width: 100%;
+  margin-top: 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #FF6B6B; 
+  color: #FFFFFF;
+}
+
+.btn-disabled {
+  background-color: lightgray;
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
+  margin: 9px 0;
+  padding: 16px 8px;
+  color: #333333; 
+  border: 1px solid lightgray;
+}
+
+.li-hover:hover {
+  background-color: #d8d8d8;
+  color: #333333;
+}
+
+.li-selected {
+  color: #FFFFFF; 
+  background-color: #35495E; 
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
+
+.quiz-container {
+  background-color: #f8f8f8;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 4px;
+  box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2),
+              -8px -8px 16px 0 rgba(255, 255, 255, 0.8);
+}
+
+.container p {
+  padding: 8px 0;
+}
