@@ -1,8 +1,7 @@
-'use client';
 import React, { useState, useEffect } from 'react';
 import { quiz } from '../data.js';
 
-const page = () => {
+const Page = () => {
     const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [checked, setChecked] = useState(false);
@@ -24,7 +23,6 @@ const page = () => {
             const interval = setInterval(() => {
                 setTimer((prev) => prev - 1);
                 if (timer === 1) {
-
                     clearInterval(interval);
                     nextQuestion();
                 }
@@ -38,7 +36,6 @@ const page = () => {
     useEffect(() => {
         setTimer(10);
     }, [activeQuestion]);
-
 
     const onAnswerSelected = (answer, idx) => {
         setChecked(true);
@@ -68,7 +65,6 @@ const page = () => {
         }
     };
 
-
     const nextQuestion = () => {
         setTimer(10);
         setSelectedAnswerIndex(null);
@@ -82,17 +78,14 @@ const page = () => {
         setChecked(false);
     };
 
-
     const skipQuestion = () => {
         if (result.skips < 2) {
-
             setResult((prev) => ({
                 ...prev,
                 skips: prev.skips + 1,
             }));
             nextQuestion();
         } else {
-
             setResult((prev) => ({
                 ...prev,
                 score: prev.score - 2,
@@ -104,16 +97,13 @@ const page = () => {
 
     return (
         <div className='container'>
-            
             <div>
-                
                 {!showResult ? (
-                    
                     <div className='quiz-container'>
                         <h2>
-                    Question: {activeQuestion + 1}
-                    <span>/{questions.length}</span>
-                 </h2>
+                            Question: {activeQuestion + 1}
+                            <span>/{questions.length}</span>
+                        </h2>
                         <h3>{questions[activeQuestion].question}</h3>
                         <p>Time Remaining: {timer} seconds</p>
                         {answers.map((answer, idx) => (
@@ -143,10 +133,10 @@ const page = () => {
                     </div>
                 ) : (
                     <div className='quiz-container'>
-                         <h2>
-                    Question: {questions.length}
-                    <span>/{questions.length}</span>
-                </h2>
+                        <h2>
+                            Question: {questions.length}
+                            <span>/{questions.length}</span>
+                        </h2>
                         <h3>Results</h3>
                         <h3>Overall {(result.score / (5 * questions.length)) * 100}%</h3>
                         <p>
@@ -172,4 +162,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
